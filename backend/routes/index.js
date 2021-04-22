@@ -4,9 +4,11 @@ const apiRouter = require('./api');
 
 router.use('/api', apiRouter);
 
-router.get('/hello/world', function(req, res) {
-  res.cookie('XSRF-Token', req.csrfToken());
-  res.send('Hello World!')
-})
+
+//TEST ROUTE FOR SETTING UP BACKEND. 
+// router.get('/hello/world', function(req, res) {
+//   res.cookie('XSRF-Token', req.csrfToken());
+//   res.send('Hello World!')
+// })
 
 module.exports = router
