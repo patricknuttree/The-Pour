@@ -10,7 +10,7 @@ const setUser = (user) => {
   };
 };
 
-const removerUser = () => {
+const removeUser = () => {
   return {
     type: REMOVE_USER,
   };
