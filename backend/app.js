@@ -24,15 +24,6 @@ app.use(helmet({
   contentSecurityPolicy:false
 }));
 
-app.use(
-  csurf({
-    cookie:{
-      secure:isProduction,
-      sameSite: isProduction && "Lax",
-      httpOnly: true,
-    }
-  })
-)
 
 app.use(routes);
 //ROUTES
@@ -43,6 +34,15 @@ app.use(routes);
 
 
 
+app.use(
+  csurf({
+    cookie:{
+      secure:isProduction,
+      sameSite: isProduction && "Lax",
+      httpOnly: true,
+    }
+  })
+)
 //PUT ROUTES ABOVE THIS LINE.
 //ERROR HANDLING
   //Catch unhandled requests and forward to error handler. aka request not found 
