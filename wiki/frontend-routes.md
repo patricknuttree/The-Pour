@@ -17,7 +17,7 @@ Front End Routes
 
 - /profile/:id
   - Profile Page: This page displays the Nav Bar and users current logged Whiskeys.
-  - GET/Profile/:id
+    - GET/Profile/:id
 
 - /whiskey/create
   - Create Whiskey Form: This page will display the form for creating a whiskey. 
@@ -35,7 +35,7 @@ Front End Routes
     - GET/Whiskey/:id/update
     - PUT/Whiskey/:id/update
 
-- /variation/create
+- whiskey/:id/variation/create
   - This page will display the nav bar and the variation creation form.
     - GET/variation/create
     - POST/variation/create
