@@ -24,6 +24,14 @@ module.exports = (sequelize, DataTypes) => {
         len: [3, 256]
       },
     },
+    userPhoto:{
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    userBio:{
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     hashedPassword:{
       type: DataTypes.STRING.BINARY,
       allowNull: false,
@@ -48,6 +56,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Whiskey, { foreignKey: 'userId'});
+    User.hasMany(models.Variation, { foreignKey: 'userId'});
   };
   User.prototype.toSafeObject = function(){
     const { id, username, email } = this;
