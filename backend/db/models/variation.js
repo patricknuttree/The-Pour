@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Variations = sequelize.define('Variations', {
+  const Variation = sequelize.define('Variation', {
     whiskeyId:{
       type: DataTypes.INTEGER,
       allowNull: false
@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   }, {});
-  Variations.associate = function(models) {
+  Variation.associate = function(models) {
     // associations can be defined here
-    Variations.belongsTo(models.User, {foreignKey: 'userId'})
-    Variations.belongsTo(models.Whiskey, {foreignKey: 'WhiskeyId'})
+    Variation.belongsTo(models.User, {foreignKey: 'userId'})
+    Variation.belongsTo(models.Whiskey, {foreignKey: 'whiskeyId'})
   };
-  return Variations;
+  return Variation;
 };
