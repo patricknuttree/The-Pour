@@ -6,12 +6,20 @@ import './UserWhiskeys.css';
 
 
 const UserWhiskey = () => {
-const dispatch = useDispatch()
 
+  const dispatch = useDispatch()
+  const userWhisk = useSelector((state) => {
+    const data = state.userWhiskey;
+    return data
+  },
+  )
+  console.log( 'USERWHISK', userWhisk)
+
+  const userWhiskKeys = Object.keys(userWhisk)
+  console.log(userWhiskKeys)
 const sessionUser = useSelector((state) => {
   if(state.session.user){
     return state.session.user
-    
   }
   return(
     <Redirect to='/' />
@@ -22,10 +30,30 @@ const sessionUser = useSelector((state) => {
   useEffect(()=> {
     dispatch(getAllUserWhiskey(sessionUser.id))
   }, [dispatch, sessionUser])
+  
 
   return (
     <div>
-      <h2>User Whiskey</h2>
+      <h2>User Whiskeys</h2>
+      <ul>
+        {userWhiskKeys.map((whiskey) => {
+          return (
+            <div className='whiskeyList'>
+              <li>
+                <img src={userWhisk[whiskey].drinkPhoto} />
+              </li>
+              <li>
+              {userWhisk[whiskey].name}
+              </li>
+              <li>
+              Rating: {userWhisk[whiskey].rating}
+              </li>
+          </div>
+          )
+        })}
+      </ul>
+
+
     </div>
   )
 }

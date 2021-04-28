@@ -6,7 +6,6 @@ function DemoButton(){
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     return dispatch(login({credential: 'Demo-lition', password: 'password'}))
 
   }

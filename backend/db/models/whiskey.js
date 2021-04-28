@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Whiskey.associate = function(models) {
     // associations can be defined here
-    // Whiskeys.belongsTo(models.User, { foreignKey: 'userId' })
+    Whiskey.belongsTo(models.User, { foreignKey: 'userId' })
     Whiskey.hasMany(models.Variation, { foreignKey: 'whiskeyId' })
 
   };
