@@ -6,17 +6,24 @@ const { User, Whiskey } = require('../../db/models');
 const router = express.Router();
 
 //Whiskey
-console.log ("USER LOG", User)
-router.get('/profile', asyncHandler(async (req, res, next) => {
-  const userId = req.body.id;
-  const userWhiskeys = await db.Whiskey.findAll({
+router.get('/whiskeys', asyncHandler(async (req, res, next) => {
+  console.log ("USER LOG", User)
+  const userId = 1;
+  const userWhiskeys = await Whiskey.findAll({
     where: {
-      userId: {
-        [Op.eq] : userId
-      }
+      userId 
     },
-    include: db.User
+    include: {
+      model: User
+    }
   })
-  console.log('BACKEND USERWHISKEYS',userWhiskeys)
+  console.log('BACKEND ROUTE', userWhiskeys)
+  return res.json(userWhiskeys)
+  // console.log('BACKEND USERWHISKEYS',userWhiskeys)
 }))
 
+// fetch('/api/profile', {
+//   method: 'GET',
+// }).then(res => res.json()).then(data => console.log(data));
+
+module.exports = router

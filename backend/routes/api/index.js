@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users');
+const userWhiskey = require('./userWhiskey')
 
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie } = require('../../utils/auth.js');
@@ -35,8 +36,22 @@ router.get(
     }
 );
 
+router.get('/whiskeys', asyncHandler(async (req, res, next) => {
+    console.log ("USER LOG", User)
+    const userId = 1;
+    const userWhiskeys = await Whiskey.findAll({
+      where: {
+        userId 
+      },
+      include: User
+    })
+    return res.json(userWhiskeys)
+    // console.log('BACKEND USERWHISKEYS',userWhiskeys)
+  }))
+
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter)
+router.use('/profile', userWhiskey)
 
 module.exports = router;
 

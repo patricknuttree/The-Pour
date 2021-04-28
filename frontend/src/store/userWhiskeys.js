@@ -12,8 +12,9 @@ const allUserWhiskey = (userWhiskey) => {
 
 //Thunk Action Creator
 export const getAllUserWhiskey = (id) => async (dispatch) => {
-  const res = await fetch(`api/whiskey/${id}`)
+  const res = await fetch(`/api/profile/whiskeys`)
   const userWhiskey = await res.json()
+  console.log('REDUCER' ,userWhiskey)
   dispatch(allUserWhiskey(userWhiskey))
   return userWhiskey
 }
