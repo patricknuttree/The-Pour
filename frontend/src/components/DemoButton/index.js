@@ -1,21 +1,21 @@
 import { login } from '../../store/session';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+
 
 function DemoButton(){
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    return dispatch(login({credential: 'Demo-lition', password: 'password'}))
-
+    await dispatch(login({credential: 'Demo-lition', password: 'password'}))
+    history.push('/profile')
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <NavLink to='/profile'> */}
         <button type='submit'>Demo</button>
-      {/* </NavLink> */}
     </form>
   )
 }
