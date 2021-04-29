@@ -3,24 +3,31 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import DemoButton from '../DemoButton'
+import video from './The-Pour-Main-Logo.mp4'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
-  const sessionUser = useSelector(state => state.session.user);
+  
 
+  const sessionUser = useSelector(state => state.session.user);
+console.log('SESSION USER', sessionUser)
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
+        <video autostart={true} autoPlay={true} muted loop
+          src={video}
+          type="video/mp4" 
+        />
         <ProfileButton user={sessionUser} />
         <NavLink to="/create/whiskey">Create Whiskey Review</NavLink>
         <NavLink to="/profile">Profile</NavLink>
+        <NavLink exact to={`/profile`}>Home</NavLink>
       </>
     );
   } else {
     sessionLinks = (
       <>
-        {/* <img src=/> */}
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
         <DemoButton />
@@ -29,12 +36,9 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <div>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    </div>
   );
 }
 
