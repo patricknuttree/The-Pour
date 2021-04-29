@@ -5,7 +5,7 @@ const { User, Whiskey } = require('../../db/models');
 
 const router = express.Router();
 
-//Whiskey
+//Whiskeys
 router.get('/whiskeys', asyncHandler(async (req, res, next) => {
   console.log ("USER LOG", User)
   const userId = 1;

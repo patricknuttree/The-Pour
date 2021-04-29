@@ -2,6 +2,7 @@ import React, { useEffect, } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { getAllUserWhiskey } from '../../store/userWhiskeys';
+import WhiskeyReview from '../WhiskeyReview/WhiskeyReview';
 import './UserWhiskeys.css';
 
 
@@ -47,6 +48,9 @@ const sessionUser = useSelector((state) => {
               </li>
               <li>
               Rating: {userWhisk[whiskey].rating}
+              </li>
+              <li>
+                <WhiskeyReview individualWhiskey = {userWhisk[whiskey]} />
               </li>
           </div>
           )
