@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 const ALL_USER_WHISKEYS = 'userWhiskeys/allUserWhiskey'
 const SET_WHISKEY = 'userWhiskeys/setWhiskey'
 //Action
@@ -17,10 +19,10 @@ const setWhiskey = (payload) => {
 //Action
 
 
-
+// const userIdddd = useSelector((state) => state.session.user.id)
 //Thunk Action Creator
 export const getAllUserWhiskey = (id) => async (dispatch) => {
-  const res = await fetch(`/api/profile/whiskeys`)
+  const res = await fetch(`/api/profile/${id}/whiskeys`)
   const userWhiskey = await res.json()
   console.log('REDUCER' ,userWhiskey)
   dispatch(allUserWhiskey(userWhiskey))

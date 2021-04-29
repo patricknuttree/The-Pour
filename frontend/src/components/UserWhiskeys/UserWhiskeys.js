@@ -17,7 +17,7 @@ const UserWhiskey = () => {
   // console.log( 'USERWHISK', userWhisk)
 
   const userWhiskKeys = Object.keys(userWhisk)
-  console.log(userWhiskKeys)
+  // console.log(userWhiskKeys)
 const sessionUser = useSelector((state) => {
   if(state.session.user){
     return state.session.user
