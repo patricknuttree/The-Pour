@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
@@ -10,6 +10,7 @@ import CreateWhiskeyPage from "./components/CreateWhiskey/CreateWhiskey";
 
 function App() {
   const dispatch = useDispatch();
+  const userId = useSelector((state) => state.session.user?.id)
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -26,7 +27,7 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/profile">
+          <Route path={`/profile/${userId}`}>
             <ProfilePage />
           </Route>
           <Route path="/create/whiskey">

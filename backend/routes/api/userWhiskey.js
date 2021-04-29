@@ -6,9 +6,9 @@ const { User, Whiskey } = require('../../db/models');
 const router = express.Router();
 
 //Whiskeys
-router.get('/whiskeys', asyncHandler(async (req, res, next) => {
+router.get('/:id/whiskeys', asyncHandler(async (req, res, next) => {
   console.log ("USER LOG", User)
-  const userId = 1;
+  const userId = req.params.id;
   const userWhiskeys = await Whiskey.findAll({
     where: {
       userId 

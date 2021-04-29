@@ -36,18 +36,18 @@ router.get(
     }
 );
 
-router.get('/whiskeys', asyncHandler(async (req, res, next) => {
-    console.log ("USER LOG", User)
-    const userId = 1;
-    const userWhiskeys = await Whiskey.findAll({
-      where: {
-        userId 
-      },
-      include: User
-    })
-    return res.json(userWhiskeys)
-    // console.log('BACKEND USERWHISKEYS',userWhiskeys)
-  }))
+// router.get('/whiskeys', asyncHandler(async (req, res, next) => {
+//     console.log ("USER LOG", User)
+//     const userId = 1;
+//     const userWhiskeys = await Whiskey.findAll({
+//       where: {
+//         userId 
+//       },
+//       include: User
+//     })
+//     return res.json(userWhiskeys)
+//     // console.log('BACKEND USERWHISKEYS',userWhiskeys)
+//   }))
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter)

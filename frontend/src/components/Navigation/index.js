@@ -21,8 +21,7 @@ console.log('SESSION USER', sessionUser)
         />
         <ProfileButton user={sessionUser} />
         <NavLink to="/create/whiskey">Create Whiskey Review</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
-        <NavLink exact to={`/profile`}>Home</NavLink>
+        <NavLink exact to={`/profile/${sessionUser.id}`}>Home</NavLink>
       </>
     );
   } else {
