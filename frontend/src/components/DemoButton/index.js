@@ -1,5 +1,6 @@
 import { login } from '../../store/session';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 function DemoButton(){
   const dispatch = useDispatch();
@@ -12,7 +13,9 @@ function DemoButton(){
 
   return (
     <form onSubmit={handleSubmit}>
-      <button type='submit'>Demo</button>
+      <NavLink to='/profile'>
+        <button type='submit'>Demo</button>
+      </NavLink>
     </form>
   )
 }

@@ -16,6 +16,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
+        {/* <img src=/> */}
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
         <DemoButton />
