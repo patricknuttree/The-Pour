@@ -17,10 +17,26 @@ router.get('/whiskeys', asyncHandler(async (req, res, next) => {
       model: User
     }
   })
-  console.log('BACKEND ROUTE', userWhiskeys)
+  // console.log('BACKEND ROUTE', userWhiskeys)
   return res.json(userWhiskeys)
   // console.log('BACKEND USERWHISKEYS',userWhiskeys)
 }))
+
+router.post(
+  '/create/whiskey', asyncHandler( async(req, res) =>{
+    const { userId, name, distiller, drinkPhoto, rating, review } = req.body
+
+    const whiskey = await Whiskey.build({
+      userId,
+      name,
+      distiller,
+      drinkPhoto,
+      rating,
+      review
+    })
+    await whiskey.save()
+  })
+)
 
 // fetch('/api/profile', {
 //   method: 'GET',

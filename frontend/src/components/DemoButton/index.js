@@ -13,9 +13,9 @@ function DemoButton(){
 
   return (
     <form onSubmit={handleSubmit}>
-      <NavLink to='/profile'>
+      {/* <NavLink to='/profile'> */}
         <button type='submit'>Demo</button>
-      </NavLink>
+      {/* </NavLink> */}
     </form>
   )
 }

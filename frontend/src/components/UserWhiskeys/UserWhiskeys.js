@@ -14,7 +14,7 @@ const UserWhiskey = () => {
     return data
   },
   )
-  console.log( 'USERWHISK', userWhisk)
+  // console.log( 'USERWHISK', userWhisk)
 
   const userWhiskKeys = Object.keys(userWhisk)
   console.log(userWhiskKeys)
@@ -30,7 +30,7 @@ const sessionUser = useSelector((state) => {
 
   useEffect(()=> {
     dispatch(getAllUserWhiskey(sessionUser.id))
-  }, [dispatch, sessionUser])
+  }, [dispatch, sessionUser.id])
   
 
   return (

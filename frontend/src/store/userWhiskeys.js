@@ -8,10 +8,10 @@ const allUserWhiskey = (userWhiskey) => {
   };
 };
 
-const setWhiskey = (whiskey) => {
+const setWhiskey = (payload) => {
   return {
     type: SET_WHISKEY,
-    payload: whiskey
+    payload
   }
 }
 //Action
@@ -22,15 +22,17 @@ const setWhiskey = (whiskey) => {
 export const getAllUserWhiskey = (id) => async (dispatch) => {
   const res = await fetch(`/api/profile/whiskeys`)
   const userWhiskey = await res.json()
-  // console.log('REDUCER' ,userWhiskey)
+  console.log('REDUCER' ,userWhiskey)
   dispatch(allUserWhiskey(userWhiskey))
-  return userWhiskey
+  // return userWhiskey
 }
 
+//CREATE WHISKEY FRONT END ROUTE
 export const pourWhiskey = (whiskey) => async (dispatch) => {
   const { userId, name, distiller, drinkPhoto, rating, review } = whiskey;
-  const response = await fetch("/api/profile/whiskeys", {
+  const response = await fetch("/api/profile/create/whiskey", {
     method: "POST",
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       userId,
       name,

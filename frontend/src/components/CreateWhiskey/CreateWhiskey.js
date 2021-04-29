@@ -13,9 +13,19 @@ function CreateWhiskeyPage(){
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState([]);
 
+  const userId = useSelector((state) => state.session.user.id)
+  // console.log('USER ID', userId)
   const handleSubmit = (e) => {
     e.preventDefault();
-    return dispatch(userWhiskeyActions.pourWhiskey({name, distiller, drinkPhoto, rating, review}))
+    const payload ={
+      userId,
+      name,
+      distiller,
+      drinkPhoto,
+      review,
+      rating
+    }
+    return dispatch(userWhiskeyActions.pourWhiskey(payload))
 };
   return (
     <form onSubmit={handleSubmit}>
