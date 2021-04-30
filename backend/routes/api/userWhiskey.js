@@ -40,15 +40,9 @@ router.post(
 
 router.put(
   '/edit/:id', asyncHandler( async(req, res) => {
-    const { whiskeyId, name, distiller, drinkPhoto, rating, review } = req.body
-    const whiskey = await Whiskey.findByPk(whiskeyId)
-      whiskey.name = name;
-      whiskey.distiller = distiller;
-      whiskey.drinkPhoto = drinkPhoto;
-      whiskey.rating = rating;
-      whiskey.review = review;
-    
-    await whiskey.save()
+    const newWhiskey = await Whiskey.update(req.body, {where:{id:req.params.id}, returning:true, plain:true, 
+    })
+    res.json(newWhiskey[1])
   
   }))
 

@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector }from "react-redux";
+import { useParams } from "react-router-dom";
 import * as userWhiskeyActions from "../../store/userWhiskeys"
 import './EditWhiskey.css';
 
 const EditWhiskey = ({whiskey}) => {
-  const currentWhiskey = useSelector(state => state.userWhiskey);
+  const { id } = useParams()
+  const currentWhiskey = useSelector(state => state.userWhiskey[id]);
   const dispatch = useDispatch();
   // const currentWhiskey = dispatch()
-  console.log(currentWhiskey)
-  const whiskeyId = currentWhiskey['0']
+  console.log('CURRENT WHISKEY', currentWhiskey)
+  const whiskeyId = currentWhiskey
 
   const [name, setName] = useState(currentWhiskey.name)
   const [distiller, setDistiller] = useState(currentWhiskey.distiller)
@@ -26,13 +28,14 @@ const EditWhiskey = ({whiskey}) => {
     e.preventDefault()
   
     const payload = {
-    whiskeyId,
+    id,
     name,
     distiller,
     drinkPhoto,
     rating,
     review
   }
+    console.log('PAYLOAD', payload)
     return dispatch(userWhiskeyActions.editWhiskey(payload));
   }
 

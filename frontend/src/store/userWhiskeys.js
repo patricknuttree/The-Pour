@@ -50,12 +50,12 @@ export const pourWhiskey = (whiskey) => async (dispatch) => {
 
 //UPDATE A WHISKEY ROUTE
 export const editWhiskey = (whiskey) => async (dispatch) => {
-  const { whiskeyId, name, distiller, drinkPhoto, rating, review } = whiskey;
-  const response = await fetch("/api/profile/edit/whiskey",{
+  const { id, name, distiller, drinkPhoto, rating, review } = whiskey;
+  const response = await fetch(`/api/profile/edit/${id}`,{
     method: "PUT",
     headers: {"Content-Type": "application/json"},
     body:JSON.stringify({
-      whiskeyId,
+      id,
       name,
       distiller,
       drinkPhoto,
@@ -64,7 +64,8 @@ export const editWhiskey = (whiskey) => async (dispatch) => {
     })
   })
   const data = await response.json();
-  dispatch(setWhiskey(data.whiskey));
+  console.log('DATA THUNK',data)
+  dispatch(setWhiskey(data));
   return response;
 }
 
@@ -77,16 +78,19 @@ const initialState = {};
 export default function userWhiskeyReducer(state = initialState, action){
   let newState;
   switch(action.type){
-    case SET_WHISKEY:
-      newState = Object.entries(state);
-      newState.whiskey = action.payload;
-      return newState
     case ALL_USER_WHISKEYS: 
-    return {
-      ...state, 
-      ...action.userWhiskey
-    }
+    newState = { ...state };
+    action.userWhiskey.forEach((whiskey) => {
+      newState[whiskey.id] = whiskey
+    })
+    return newState
+    case SET_WHISKEY:
+      console.log(action.payload)
+      newState = { ...state }
+      newState[action.payload.id] = action.payload;
+      return newState
+  
     default:
       return state
+    }
   }
-}

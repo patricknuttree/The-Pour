@@ -39,7 +39,6 @@ const sessionUser = useSelector((state) => {
       <ul>
         {userWhiskKeys.map((whiskey) => {
           return (
-            
               <li key={userWhisk[whiskey].name}>
                 <img src={userWhisk[whiskey].drinkPhoto} />
                 {userWhisk[whiskey].name}
