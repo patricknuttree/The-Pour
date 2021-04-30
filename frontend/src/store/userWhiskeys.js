@@ -1,5 +1,7 @@
+import { csrfFetch } from "./csrf";
+
 const ALL_USER_WHISKEYS = 'userWhiskeys/allUserWhiskey'
-const SET_WHISKEY = 'userWhiskeys/setWhiskey'
+const SET_WHISKEY = 'userWhiskeys/setWhiskey' 
 
 //Action
 const allUserWhiskey = (userWhiskey) => {
@@ -31,7 +33,7 @@ export const getAllUserWhiskey = (id) => async (dispatch) => {
 //CREATE WHISKEY FRONT END ROUTE
 export const pourWhiskey = (whiskey) => async (dispatch) => {
   const { userId, name, distiller, drinkPhoto, rating, review } = whiskey;
-  const response = await fetch("/api/profile/create/whiskey", {
+  const response = await csrfFetch("/api/profile/create/whiskey", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -44,14 +46,15 @@ export const pourWhiskey = (whiskey) => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  dispatch(setWhiskey(data.whiskey)); 
+  console.log(data)
+  // dispatch(setWhiskey(data.whiskey)); 
   return response;
 }
 
 //UPDATE A WHISKEY ROUTE
 export const editWhiskey = (whiskey) => async (dispatch) => {
   const { id, name, distiller, drinkPhoto, rating, review } = whiskey;
-  const response = await fetch(`/api/profile/edit/${id}`,{
+  const response = await csrfFetch(`/api/profile/edit/${id}`,{
     method: "PUT",
     headers: {"Content-Type": "application/json"},
     body:JSON.stringify({

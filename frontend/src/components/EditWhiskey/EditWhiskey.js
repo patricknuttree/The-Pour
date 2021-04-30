@@ -12,11 +12,11 @@ const EditWhiskey = ({whiskey}) => {
   // console.log('CURRENT WHISKEY', currentWhiskey)
   const whiskeyId = currentWhiskey
 
-  const [name, setName] = useState(currentWhiskey.name)
-  const [distiller, setDistiller] = useState(currentWhiskey.distiller)
-  const [drinkPhoto, setDrinkPhoto] = useState(currentWhiskey.drinkPhoto)
-  const [rating, setRating] = useState(currentWhiskey.rating)
-  const [review, setReview] = useState(currentWhiskey.review)
+  const [name, setName] = useState(currentWhiskey?.name)
+  const [distiller, setDistiller] = useState(currentWhiskey?.distiller)
+  const [drinkPhoto, setDrinkPhoto] = useState(currentWhiskey?.drinkPhoto)
+  const [rating, setRating] = useState(currentWhiskey?.rating)
+  const [review, setReview] = useState(currentWhiskey?.review)
 
   const updateName = (e) => setName(e.target.value)
   const updateDistiller = (e) => setDistiller(e.target.value)
