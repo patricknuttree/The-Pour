@@ -38,8 +38,18 @@ router.post(
   })
 )
 
-// fetch('/api/profile', {
-//   method: 'GET',
-// }).then(res => res.json()).then(data => console.log(data));
+router.put(
+  '/edit/:id', asyncHandler( async(req, res) => {
+    const { whiskeyId, name, distiller, drinkPhoto, rating, review } = req.body
+    const whiskey = await Whiskey.findByPk(whiskeyId)
+      whiskey.name = name;
+      whiskey.distiller = distiller;
+      whiskey.drinkPhoto = drinkPhoto;
+      whiskey.rating = rating;
+      whiskey.review = review;
+    
+    await whiskey.save()
+  
+  }))
 
 module.exports = router

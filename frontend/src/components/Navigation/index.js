@@ -15,7 +15,7 @@ console.log('SESSION USER', sessionUser)
   if (sessionUser) {
     sessionLinks = (
       <>
-        <video autostart={true} autoPlay={true} muted loop
+        <video autostart autoPlay={true} muted loop
           src={video}
           type="video/mp4" 
         />
