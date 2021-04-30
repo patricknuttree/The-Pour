@@ -25,7 +25,6 @@ app.use(helmet({
 }));
 
 
-app.use(routes);
 //ROUTES
 
 
@@ -42,7 +41,8 @@ app.use(
       httpOnly: true,
     }
   })
-)
+  )
+  app.use(routes);
 //PUT ROUTES ABOVE THIS LINE.
 //ERROR HANDLING
   //Catch unhandled requests and forward to error handler. aka request not found 
