@@ -79,6 +79,7 @@ const EditWhiskey = ({whiskey}) => {
           onChange={updateReview}
           />
         <button type="submit">Update Whiskey</button>
+        <button type="button">Delete</button>
       </form>
     </section>
 

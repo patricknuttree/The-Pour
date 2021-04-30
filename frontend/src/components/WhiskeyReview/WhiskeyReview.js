@@ -21,7 +21,6 @@ const WhiskeyReview = ({ individualWhiskey }) => {
       <NavLink to={`/edit/${individualWhiskey.id}`}>
        <button type='button'>Update</button>
       </NavLink>
-      <button>Delete</button>
     </div>
   )
 }
