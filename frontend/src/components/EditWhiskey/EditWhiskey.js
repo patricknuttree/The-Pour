@@ -9,7 +9,7 @@ const EditWhiskey = ({whiskey}) => {
   const currentWhiskey = useSelector(state => state.userWhiskey[id]);
   const dispatch = useDispatch();
   // const currentWhiskey = dispatch()
-  console.log('CURRENT WHISKEY', currentWhiskey)
+  // console.log('CURRENT WHISKEY', currentWhiskey)
   const whiskeyId = currentWhiskey
 
   const [name, setName] = useState(currentWhiskey.name)
@@ -35,7 +35,7 @@ const EditWhiskey = ({whiskey}) => {
     rating,
     review
   }
-    console.log('PAYLOAD', payload)
+    // console.log('PAYLOAD', payload)
     return dispatch(userWhiskeyActions.editWhiskey(payload));
   }
 

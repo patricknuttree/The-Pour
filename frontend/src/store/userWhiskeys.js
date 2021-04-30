@@ -64,7 +64,7 @@ export const editWhiskey = (whiskey) => async (dispatch) => {
     })
   })
   const data = await response.json();
-  console.log('DATA THUNK',data)
+  // console.log('DATA THUNK',data)
   dispatch(setWhiskey(data));
   return response;
 }
@@ -85,7 +85,7 @@ export default function userWhiskeyReducer(state = initialState, action){
     })
     return newState
     case SET_WHISKEY:
-      console.log(action.payload)
+      // console.log(action.payload)
       newState = { ...state }
       newState[action.payload.id] = action.payload;
       return newState

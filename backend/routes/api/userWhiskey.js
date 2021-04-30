@@ -7,7 +7,7 @@ const router = express.Router();
 
 //Whiskeys
 router.get('/:id/whiskeys', asyncHandler(async (req, res, next) => {
-  console.log ("USER LOG", User)
+  // console.log ("USER LOG", User)
   const userId = req.params.id;
   const userWhiskeys = await Whiskey.findAll({
     where: {

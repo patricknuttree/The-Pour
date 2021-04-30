@@ -10,7 +10,7 @@ function Navigation({ isLoaded }){
   
 
   const sessionUser = useSelector(state => state.session.user);
-console.log('SESSION USER', sessionUser)
+// console.log('SESSION USER', sessionUser)
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
