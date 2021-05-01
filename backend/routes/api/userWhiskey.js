@@ -47,4 +47,11 @@ router.put(
   
   }))
 
+router.delete(
+  '/edit/:id', asyncHandler( async(req, res) => {
+    const removeWhiskey = await Whiskey.destroy({where:{id:req.params.id}})
+    return res.json(removeWhiskey[1])
+    }
+))
+
 module.exports = router
