@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
 import CreateWhiskeyPage from "./components/CreateWhiskey/CreateWhiskey";
 import EditWhiskey from "./components/EditWhiskey/EditWhiskey";
+import LandingPage from "./components/LandingPage/LandingPage"
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/edit/:id">
             <EditWhiskey />
+          </Route>
+          <Route path='/'>
+            <LandingPage />
           </Route>
         </Switch>
       )}
