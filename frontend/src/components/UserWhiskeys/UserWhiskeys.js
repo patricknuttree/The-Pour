@@ -5,10 +5,9 @@ import { getAllUserWhiskey } from '../../store/userWhiskeys';
 import WhiskeyReview from '../WhiskeyReview/WhiskeyReview';
 import './UserWhiskeys.css';
 
-
 const UserWhiskey = () => {
-
   const dispatch = useDispatch()
+  const user = useSelector((state) => state.session.user)
   const userWhisk = useSelector((state) => {
     const data = state.userWhiskey;
     return data

@@ -15,7 +15,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
-        <video autostart autoPlay={true} muted loop
+        <video autostart autoPlay muted loop
           src={video}
           type="video/mp4" 
         />

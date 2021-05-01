@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector }from "react-redux";
-import { useParams } from "react-router-dom";
+import { NavLink, Redirect, useParams } from "react-router-dom";
 import * as userWhiskeyActions from "../../store/userWhiskeys"
 import './EditWhiskey.css';
 
 const EditWhiskey = ({whiskey}) => {
   const { id } = useParams()
   const currentWhiskey = useSelector(state => state.userWhiskey[id]);
+  const user = useSelector(state => state.session.user)
   const dispatch = useDispatch();
   // const currentWhiskey = dispatch()
-  // console.log('CURRENT WHISKEY', currentWhiskey)
+  console.log('CURRENT WHISKEY', currentWhiskey)
   const whiskeyId = currentWhiskey
 
   const [name, setName] = useState(currentWhiskey?.name)
@@ -36,7 +37,27 @@ const EditWhiskey = ({whiskey}) => {
     review
   }
     // console.log('PAYLOAD', payload)
+    if(e.type === "click"){
+
+    }
     return dispatch(userWhiskeyActions.editWhiskey(payload));
+
+    //ATTEMPT AT DELETE BUTTON BOOLEAN SYSTEM
+    // const onDelete = async () => {
+    //   const wasDeleted = await dispatch(userWhiskeyActions.deleteWhiskey(payload.id))
+    //   if (wasDeleted){
+    //     <Redirect path='user' />
+    //   }
+    // }
+  }
+
+  const handleDelete = (e) => {
+    // e.preventDefault()
+    const deleteData = {id}
+    console.log('DELETE DATA',deleteData)
+    if(e.type === "click"){
+    }
+    return dispatch(userWhiskeyActions.removeWhiskey(deleteData))
   }
 
   return(
@@ -79,7 +100,9 @@ const EditWhiskey = ({whiskey}) => {
           onChange={updateReview}
           />
         <button type="submit">Update Whiskey</button>
-        <button type="button">Delete</button>
+        <NavLink to={`/profile/${user.id}`}>
+          <button type="click" onClick={handleDelete}>Delete</button>
+        </NavLink>
       </form>
     </section>
 
