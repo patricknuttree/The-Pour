@@ -1,4 +1,5 @@
 import { csrfFetch } from "./csrf";
+import { REMOVE_USER } from "./session"
 
 const ALL_USER_WHISKEYS = 'userWhiskeys/allUserWhiskey'
 const SET_WHISKEY = 'userWhiskeys/setWhiskey' 
@@ -19,10 +20,10 @@ const setWhiskey = (payload) => {
   }
 }
 
-const deleteWhiskey = (deleteData) => {
+const deleteWhiskey = (id) => {
   return {
     type: DELETE_WHISKEY,
-    deleteData
+    id
   }
 }
 //Action
@@ -80,8 +81,8 @@ export const editWhiskey = (whiskey) => async (dispatch) => {
   return response;
 }
 
-export const removeWhiskey = (deleteData) => async (dispatch) => {
-  const { id } = deleteData
+export const removeWhiskey = (id) => async (dispatch) => {
+
   const response = await csrfFetch(`/api/profile/edit/${id}`, {
     method: "DELETE",
     headers:{"Content-Type": "application/json"},
@@ -90,7 +91,7 @@ export const removeWhiskey = (deleteData) => async (dispatch) => {
     })
   })
   const data = await response.json();
-  dispatch(deleteWhiskey(data));
+  dispatch(deleteWhiskey(id));
   return response
 }
 
@@ -104,12 +105,13 @@ export default function userWhiskeyReducer(state = initialState, action){
   let newState;
   switch(action.type){
     case SET_WHISKEY:
-      // console.log(action.payload)
+      console.log(action.payload)
       newState = { ...state }
       newState[action.payload.id] = action.payload;
-      return newState
+     return newState
     case DELETE_WHISKEY: {
       newState = { ...state};
+      delete newState[action.id]
       return newState
     }
     case ALL_USER_WHISKEYS: 
@@ -118,6 +120,8 @@ export default function userWhiskeyReducer(state = initialState, action){
       newState[whiskey.id] = whiskey
     })
     return newState
+    case REMOVE_USER:
+      return {}
     default:
       return state
     }

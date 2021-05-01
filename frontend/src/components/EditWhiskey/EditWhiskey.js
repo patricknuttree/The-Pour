@@ -53,11 +53,11 @@ const EditWhiskey = ({whiskey}) => {
 
   const handleDelete = (e) => {
     // e.preventDefault()
-    const deleteData = {id}
-    console.log('DELETE DATA',deleteData)
+    // const deleteData = {id}
+    console.log('DELETE DATA',id)
     if(e.type === "click"){
     }
-    return dispatch(userWhiskeyActions.removeWhiskey(deleteData))
+    return dispatch(userWhiskeyActions.removeWhiskey(id))
   }
 
   return(
