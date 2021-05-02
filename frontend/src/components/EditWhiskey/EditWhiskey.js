@@ -61,50 +61,60 @@ const EditWhiskey = ({whiskey}) => {
   }
 
   return(
-    <section>
+    <section className="edit-section">
       <h2>Edit your review of {currentWhiskey.name}</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder={`${name}`}
-          required
-          value={name}
-          onChange={updateName}
-          />
-        <input
-          type="text"
-          placeholder={`${distiller}`}
-          required
-          value={distiller}
-          onChange={updateDistiller}
-          />
-          <input
-          type="text"
-          placeholder={`${drinkPhoto}`}
-          value={drinkPhoto}
-          onChange={updateDrinkPhoto}
-          />
-          <input
-          type="number"
-          max="5"
-          min="0"
-          placeholder={`${rating}`}
-          required
-          value={rating}
-          onChange={updateRating}
-          />
-          <input
-          type="text"
-          placeholder={`${review}`}
-          required
-          value={review}
-          onChange={updateReview}
-          />
-        <button type="submit">Update Whiskey</button>
-        <NavLink to={`/profile/${user.id}`}>
-          <button type="click" onClick={handleDelete}>Delete</button>
-        </NavLink>
-      </form>
+          <form className="edit-form" onSubmit={handleSubmit}>
+            <label className="edit-name-label">Whiskey Name
+              <input
+                type="text"
+                placeholder={`${name}`}
+                required
+                value={name}
+                onChange={updateName}
+                />
+            </label>
+            <label className="edit-name-label">Whiskey Distiller
+              <input
+                type="text"
+                placeholder={`${distiller}`}
+                required
+                value={distiller}
+                onChange={updateDistiller}
+                />
+            </label>
+            <label className="edit-name-label">Photo of {currentWhiskey.name}
+              <input
+              type="text"
+              placeholder={`${drinkPhoto}`}
+              value={drinkPhoto}
+              onChange={updateDrinkPhoto}
+              />
+            </label>
+            <label className="edit-name-label">Whiskey Rating
+              <input
+              type="number"
+              max="5"
+              min="0"
+              placeholder={`${rating}`}
+              required
+              value={rating}
+              onChange={updateRating}
+              />
+            </label>
+            <label className="edit-name-label">Whiskey Review
+              <input
+              type="text"
+              placeholder={`${review}`}
+              required
+              value={review}
+              onChange={updateReview}
+              />
+            </label>
+            <button type="submit">Update Whiskey</button>
+            <NavLink to={`/profile/${user.id}`}>
+              <button id="delete-button" type="click" onClick={handleDelete}>Delete</button>
+            </NavLink>
+          </form>
     </section>
 
 
