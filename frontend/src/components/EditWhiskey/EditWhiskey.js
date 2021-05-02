@@ -62,6 +62,7 @@ const EditWhiskey = ({whiskey}) => {
 
   return(
     <section>
+      <h2>Edit your review of {currentWhiskey.name}</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

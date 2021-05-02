@@ -15,13 +15,17 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div className="navigation-container">
-        <video autostart="true" autoPlay muted loop
+        <video className="nav-logo" autostart="true" autoPlay muted loop
           src={video}
           type="video/mp4" 
         />
-        <ProfileButton user={sessionUser} />
-        <NavLink to="/create/whiskey">Create Whiskey Review</NavLink>
-        <NavLink exact to={`/profile/${sessionUser.id}`}>Home</NavLink>
+        <ProfileButton className="profile-button"  user={sessionUser} />
+        <div className="nonlog-link">
+          <NavLink className="nonlog-item" to="/create/whiskey">Create Whiskey Review</NavLink>
+        </div>
+        <div className="nonlog-link">
+          <NavLink className="nonlog-item" exact to={`/profile/${sessionUser.id}`}>Home</NavLink>
+        </div>
       </div>
     );
   } else {

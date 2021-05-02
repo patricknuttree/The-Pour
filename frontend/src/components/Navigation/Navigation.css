@@ -87,3 +87,18 @@ button:hover{
   border: 5px solid rgba(5, 40, 75 .5);
   box-shadow: 0px 0px 10px 3px #05284B;
 }
+
+.navigation-container{
+  border: 3px solid purple;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-logo{
+  height: 200px;
+}
