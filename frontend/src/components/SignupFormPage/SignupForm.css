@@ -1,0 +1,33 @@
+body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.signup-form-container{
+  background-color: rgba(71, 98, 154, .5);
+  border-radius: 10px;
+  padding: 0px 15px 10px 15px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  bottom: 50vh;
+  left: 41.5vw;
+  z-index: 5;
+ } 
+
+ label{
+   font-weight: bold;
+ }
+
+.signup-form-inputs-container{
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  flex-wrap: wrap;
+} 

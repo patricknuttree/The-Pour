@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import DemoButton from '../DemoButton'
-import video from './The-Pour-Main-Logo.mp4'
+import video from './thepourmainlargebw.mp4'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -14,7 +14,7 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <>
+      <div className="navigation-container">
         <video autostart="true" autoPlay muted loop
           src={video}
           type="video/mp4" 
@@ -22,15 +22,29 @@ function Navigation({ isLoaded }){
         <ProfileButton user={sessionUser} />
         <NavLink to="/create/whiskey">Create Whiskey Review</NavLink>
         <NavLink exact to={`/profile/${sessionUser.id}`}>Home</NavLink>
-      </>
+      </div>
     );
   } else {
     sessionLinks = (
-      <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <DemoButton />
-      </>
+      
+      <div className="navigation-container-nonLog">
+        <div className="nonLogvideo">
+          <video id="nonlog-video-item" autostart="true" autoPlay muted loop
+            src={video}
+            type="video/mp4" 
+            />
+        </div>
+        <div className="nonlog-buttons" >
+          <div className="nonlog-link">
+            <NavLink className="nonlog-item" to="/login">Log In</NavLink>
+          </div>
+          <div className="nonlog-link">
+            <NavLink className="nonlog-item" to="/signup">Sign Up</NavLink>
+          </div>
+          <DemoButton/>
+        </div>
+      </div>
+      
     );
   }
 
