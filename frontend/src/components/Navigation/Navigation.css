@@ -1,7 +1,9 @@
 body{
+  background-color: #FAF8F0;
   font-family: "Georgia","Cochin", "Palatino";
 }
 
+/* NOT LOGGED IN */
 .navigation-container-nonLog{
   /* border: 3px solid red; */
   display: flex;
@@ -41,7 +43,7 @@ body{
 .nonlog-link{
   transition: ease-in;
   transition-duration: 250ms;
-  background-color:rgba(5, 40, 75, .90);
+  background-color:rgba(220, 196, 142, .90);
   border: 3px solid #A57945;
   height:20;
   border-radius: 10px;
@@ -53,17 +55,21 @@ body{
   transition-duration: 500ms;
   /* background-color: #A57945; */
   background-color:rgba(5, 40, 75, 1);
-
+  color: #faf8f0;
   border: 5px solid rgba(5, 40, 75 .5);
   box-shadow: 0px 0px 10px 3px #05284B;
 
 }
 
 .nonlog-item{
-  color:#E3E8F2;
+  color:#4F646F;
   font-weight: bolder;
   text-decoration: none;
   font-size: 20px;
+}
+
+.nonlog-item:hover{
+  color: #faf8f0;
 }
 
 button{
@@ -72,8 +78,8 @@ button{
   border: 3px solid #A57945;
   border-radius: 10px;
   padding: 20px 40px;
-  background-color:rgba(5, 40, 75, .90);
-  color:#E3E8F2;
+  background-color:rgba(220, 196, 142, .90);
+  color:#4F646F;
   font-weight: bolder;
   text-decoration: none;
   font-family: "Georgia","Cochin", "Palatino";
@@ -82,23 +88,59 @@ button{
 
 button:hover{
   transition: ease-in;
+  color: #faf8f0;
   transition-duration: 500ms;
   background-color:rgba(5, 40, 75, 1);
   border: 5px solid rgba(5, 40, 75 .5);
   box-shadow: 0px 0px 10px 3px #05284B;
 }
 
+/* LOGGED IN AKA NAV BAR */
+
 .navigation-container{
-  border: 3px solid purple;
-  width: 100vw;
+  /* border: 3px solid purple; */
+  background-color: #4F646F;
+  border-bottom: 3px solid #B3C0A4 ;
+  width: 98vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   height: 200px;
   margin: 0;
   padding: 0;
 }
+.navlog-buttons-section{
+  /* border: 3px solid orange; */
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
 
-.nav-logo{
+.nav-log-buttons-container{
+  /* border: 3px solid violet; */
+  margin-left: 30%;
+  margin-right: 5%;
+  width: 65%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-log-video-container{
+  /* border: 3px solid yellow; */
   height: 200px;
 }
+
+.nav-logo{
+  max-width: 100%;
+  max-height: 100%;
+}
+
