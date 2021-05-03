@@ -15,11 +15,12 @@ const WhiskeyReview = ({ individualWhiskey }) => {
   //   return targetWhiskey
   // }
   return (
-    <div>
-      <div>Your Thoughts: {individualWhiskey.review}</div>
-      <div>Distillery: {individualWhiskey.distiller}</div>
-      <NavLink to={`/edit/${individualWhiskey.id}`}>
-       <button type='button'>Update</button>
+    <div className="r-info">
+      <div className="r-review">Review: {individualWhiskey.review}</div>
+      <div className="r-distiller" >Distillery: {individualWhiskey.distiller}</div>
+      <NavLink className="r-update"to={`/edit/${individualWhiskey.id}`}>
+        Update
+        {/* <button  id="r-update" type='button'>Update</button> */}
       </NavLink>
     </div>
   )
