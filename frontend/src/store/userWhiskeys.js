@@ -80,7 +80,7 @@ export const editWhiskey = (whiskey) => async (dispatch) => {
   dispatch(setWhiskey(data));
   return response;
 }
-
+//DELETE WHISKEY THUNK
 export const removeWhiskey = (id) => async (dispatch) => {
 
   const response = await csrfFetch(`/api/profile/edit/${id}`, {
