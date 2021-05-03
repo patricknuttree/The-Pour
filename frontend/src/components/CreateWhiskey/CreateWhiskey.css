@@ -1,0 +1,31 @@
+.create-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.create-form{
+  background-color: #F5EFE0;
+  box-shadow: 2px 2px 20px 3px rgba(72, 39, 40, .5);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* margin-bottom: 100px; */
+  height: 500px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.create-form-div{
+  border: 3px solid blue;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
