@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
 import CreateWhiskeyPage from "./components/CreateWhiskey/CreateWhiskey";
 import EditWhiskey from "./components/EditWhiskey/EditWhiskey";
+import AboutPage from "./components/AboutPage/AboutPage"
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/edit/:id">
             <EditWhiskey />
+          </Route>
+          <Route path="/about">
+            <AboutPage />
           </Route>
         </Switch>
       )}

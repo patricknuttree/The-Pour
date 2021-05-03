@@ -28,57 +28,60 @@ function CreateWhiskeyPage(){
     return dispatch(userWhiskeyActions.pourWhiskey(payload))
 };
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Whiskey Name
-        <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-        />
-      </label>
-      <label>
-        Distiller
-        <input 
+    <section className="create-section">
+      <form className="create-form" onSubmit={handleSubmit}>
+      <h2>Pour out your whiskey thoughts:</h2>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+        <label className="create-name-label">
+          Whiskey Name
+          <input
           type="text"
-          value={distiller}
-          onChange={(e) => setDistiller(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           required
           />
-      </label>
-      <label>
-        Drink Photo URL
-        <input 
-          type="text"
-          value={drinkPhoto}
-          onChange={(e) => setDrinkPhoto(e.target.value)}
-          />
-      </label>
-      <label>
-        rating
-        <input
-          type="number"
-          max="5"
-          min="0"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          required
-          />
-      </label>
-      <label>
-        review
-        <input
-          type="text"
-          value={review}
-          onChange={(e) => setReview(e.target.value)}
-          />
-      </label>
-      <button type="submit">Create New Whiskey Review</button>
-    </form>
+        </label>
+        <label className="create-distiller-label">
+          Distiller
+          <input 
+            type="text"
+            value={distiller}
+            onChange={(e) => setDistiller(e.target.value)}
+            required
+            />
+        </label>
+        <label className="create-drinkPhoto-label">
+          Drink Photo URL
+          <input 
+            type="text"
+            value={drinkPhoto}
+            onChange={(e) => setDrinkPhoto(e.target.value)}
+            />
+        </label>
+        <label className="create-rating-label">
+          rating
+          <input
+            type="number"
+            max="5"
+            min="0"
+            value={rating}
+            onChange={(e) => setRating(e.target.value)}
+            required
+            />
+        </label>
+        <label className="create-review-label">
+          review
+          <input
+            type="text"
+            value={review}
+            onChange={(e) => setReview(e.target.value)}
+            />
+        </label>
+        <button type="submit">Create New Whiskey Review</button>
+      </form>
+    </section>
   );
 }
 

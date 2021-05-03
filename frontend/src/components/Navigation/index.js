@@ -15,13 +15,27 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div className="navigation-container">
-        <video autostart="true" autoPlay muted loop
-          src={video}
-          type="video/mp4" 
-        />
-        <ProfileButton user={sessionUser} />
-        <NavLink to="/create/whiskey">Create Whiskey Review</NavLink>
-        <NavLink exact to={`/profile/${sessionUser.id}`}>Home</NavLink>
+        <div className="nav-log-video-container">
+          <NavLink className="log-item" exact to={`/profile/${sessionUser.id}`}>
+            <video className="nav-logo" autostart="true" autoPlay muted loop
+              src={video}
+              type="video/mp4" 
+              />
+          </NavLink>
+        </div>
+        <div className="navlog-buttons-section">
+          <div className="nav-log-buttons-container">
+            <ProfileButton className="profile-button"  user={sessionUser} />
+            <NavLink className="nonlog-item" to="/create/whiskey">
+              <div className="nonlog-link" >Create Whiskey</div>
+            </NavLink>
+            <NavLink className="nonlog-item" to="/about">
+              <div className="nonlog-link">About</div>
+            </NavLink>
+        </div>
+          
+          
+        </div>
       </div>
     );
   } else {
@@ -35,12 +49,12 @@ function Navigation({ isLoaded }){
             />
         </div>
         <div className="nonlog-buttons" >
-          <div className="nonlog-link">
-            <NavLink className="nonlog-item" to="/login">Log In</NavLink>
-          </div>
-          <div className="nonlog-link">
-            <NavLink className="nonlog-item" to="/signup">Sign Up</NavLink>
-          </div>
+          <NavLink className="nonlog-item" to="/login">
+            <div className="nonlog-link">login</div>
+          </NavLink>
+          <NavLink className="nonlog-item" to="/signup">
+            <div className="nonlog-link">Sign Up</div>
+          </NavLink>
           <DemoButton/>
         </div>
       </div>
