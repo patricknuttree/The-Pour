@@ -1,11 +1,10 @@
 import { login } from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 function DemoButton(){
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.session.user?.id)
   const history = useHistory();
 
   const handleSubmit = async(e) => {

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector }from "react-redux";
-import { NavLink, Redirect, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import * as userWhiskeyActions from "../../store/userWhiskeys"
 import './EditWhiskey.css';
 
@@ -11,7 +11,7 @@ const EditWhiskey = ({whiskey}) => {
   const dispatch = useDispatch();
   // const currentWhiskey = dispatch()
   console.log('CURRENT WHISKEY', currentWhiskey)
-  const whiskeyId = currentWhiskey
+  // const whiskeyId = currentWhiskey
 
   const [name, setName] = useState(currentWhiskey?.name)
   const [distiller, setDistiller] = useState(currentWhiskey?.distiller)

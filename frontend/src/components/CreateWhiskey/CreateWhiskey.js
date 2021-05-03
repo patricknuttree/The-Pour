@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Redirect } from "react-router-dom";
 import * as userWhiskeyActions from "../../store/userWhiskeys"
 import './CreateWhiskey.css';
 
@@ -11,7 +10,6 @@ function CreateWhiskeyPage(){
   const [drinkPhoto, setDrinkPhoto] = useState("");
   const [rating, setRating] = useState("");
   const [review, setReview] = useState("");
-  const [errors, setErrors] = useState([]);
 
   const userId = useSelector((state) => state.session.user.id)
   // console.log('USER ID', userId)
@@ -31,9 +29,6 @@ function CreateWhiskeyPage(){
     <section className="create-section">
       <form className="create-form" onSubmit={handleSubmit}>
       <h2>Pour out your whiskey thoughts:</h2>
-        <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
         <label className="create-name-label">
           Whiskey Name
           <input

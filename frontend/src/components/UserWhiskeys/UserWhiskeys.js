@@ -44,7 +44,7 @@ const sessionUser = useSelector((state) => {
             return (
               <div className="userWhiskeys-container">
                 <div className="uw-photo-container">
-                  <img className="uw-photo" src={userWhisk[whiskey].drinkPhoto} />
+                  <img alt="" className="uw-photo" src={userWhisk[whiskey].drinkPhoto} />
                 </div>
                   <div className="review-info-container">
                   <div className="other-info-container">

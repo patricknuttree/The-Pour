@@ -1,6 +1,4 @@
-import React, { useEffect, } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, Route } from 'react-router';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './WhiskeyReview.css';
 

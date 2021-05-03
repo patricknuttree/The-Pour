@@ -90,7 +90,7 @@ export const removeWhiskey = (id) => async (dispatch) => {
       id
     })
   })
-  const data = await response.json();
+  await response.json();
   dispatch(deleteWhiskey(id));
   return response
 }
