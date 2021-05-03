@@ -2,31 +2,22 @@
 
 ## MVP List
 
+The Pour, an Untappd clone, with a whiskey spin. It is a website for users to log and track their drinking pilgrimage to whiskey nirvana.  
 
+### 1. Create Whiskey.
+- Users can create a review of a whiskey including its Name, distiller, photo of the whiskey, a rating and, a written review. 
 
-The Pour, a Untappd clone, is a website for users to log, track, share their whiskey drinking journey, and follow their fellow their fellow travelers on their pilgrimage through the world of whiskey.  
-
-### 1. Whiskey Page.
-- User can create a new whiskey that they have tried.
+### 2. User Whiskey Profile / Whiskey View.
 - User can view the drink that they created.
-- User can update the drink that they created.
-- Users can delete drinks they have created. 
 
-### 2. Whiskey page review.
-- Logged in Users when creating a whiskey the user will leave a review of the whiskey. They can also update the review of the whiskey at the same time when updating the drink. 
-
-### 3. User Profile. 
-- Logged in User can view their created whiskeys.
-- The whiskeys will appear with the name of the whiskey, the photo of the whiskey and their review of that whiskey.
-
-### 4. Variations page. 
-  - A logged in user can create different cocktails they have tried the whiskey with.
-    - User can give the cocktail a 1 - 5 rating as far as liking the cocktail. 
-  - User can read the created cocktail.
-  - User can update the cocktail. 
-  - User can delete the cocktail. 
+### 3. Edit Page. 
+- Users can change and or update their review of a whiskey. 
+- Users can also delete their review of a whiskey. 
 
 ### 4. About Us.
   - This will tell the user about the developer and how to contact them. 
+
+## UnRelated Bonus Features
+  - Animated Logo
 
   
