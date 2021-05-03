@@ -61,7 +61,7 @@
 
 >"Take a method and try it. If it fails, admit it frankly, and try another. But by all means, try something." -Franklin D. Roosevelt
 
-The Pour is a Full-stack project that gives its users the ability to build out their own tasting profile with regard to whiskey. End of the day just about all whiskeys are brown, liquids, sitting in glass. It can be difficult to keep them all straight because of this uniformity. This app tries to take the burden off the user and let them get back to the important stuff, embarking through the world of whiskey. 
+The Pour is a Full-stack project that gives its users the ability to build out their own tasting profile with regard to whiskey. End of the day just about all whiskeys are brown, liquids, sitting in glass. It can be difficult to keep them all straight because of this uniformity. This app tries to take the burden off the user and let them get back to the important stuff, trying whiskeys. 
 
 ### Visit The Pour
 https://the-pour.herokuapp.com/
