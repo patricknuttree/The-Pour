@@ -29,7 +29,7 @@
 
 .review-info-container{
   /* border: 3px solid green; */
-  background-color: rgba(72, 39, 40, .75);
+  background-color: #061A40;
   padding-left: 10px;
  
   color:#FAF8F0;
@@ -43,8 +43,8 @@
   /* border: 3px solid yellow; */
   width: 20%;
   height: 100%;
-  color: black;
-  background-color: #DCC48E;
+  color: #2B2D42;
+  background-color: #5FACDF;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,5 +75,5 @@
 }
 
 #userwhisk-name{
-  color: #4F646F;
+  color: #2B2D42;
 }

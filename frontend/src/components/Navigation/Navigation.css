@@ -43,8 +43,10 @@ body{
 .nonlog-link{
   transition: ease-in;
   transition-duration: 250ms;
-  background-color:rgba(220, 196, 142, .90);
-  border: 3px solid #A57945;
+  /* background-color:rgba(220, 196, 142, .90); */
+  background-color: #D0D3D4;
+  /* border: 3px solid #A57945; */
+  border: 1px solid black;
   height:20;
   border-radius: 10px;
   padding: 20px 40px;
@@ -52,9 +54,9 @@ body{
 
 .nonlog-link:hover{
   transition: ease-in;
-  transition-duration: 500ms;
+  transition-duration: 250ms;
   /* background-color: #A57945; */
-  background-color:rgba(5, 40, 75, 1);
+  background-color:#7C7E7E;
   color: #faf8f0;
   border: 5px solid rgba(5, 40, 75 .5);
   box-shadow: 0px 0px 10px 3px #05284B;
@@ -75,22 +77,30 @@ body{
 button{
   transition: ease-in;
   transition-duration: 250ms;
-  border: 3px solid #A57945;
+  /* border: 1px solid #A57945; */
+  border: 1px solid black;
   border-radius: 10px;
   padding: 20px 40px;
-  background-color:rgba(220, 196, 142, .90);
-  color:#4F646F;
+  background-color:#7C7E7E;
+  /* color:#4F646F; */
+  color: #faf8f0;
+
   font-weight: bolder;
   text-decoration: none;
   font-family: "Georgia","Cochin", "Palatino";
   font-size: 20px;
+  cursor: pointer;
 }
 
 button:hover{
   transition: ease-in;
-  color: #faf8f0;
-  transition-duration: 500ms;
-  background-color:rgba(5, 40, 75, 1);
+  /* color: #faf8f0; */
+  color:#4F646F;
+
+  transition-duration: 250ms;
+  /* background-color:rgba(5, 40, 75, 1); */
+  background-color: #D0D3D4;
+
   border: 5px solid rgba(5, 40, 75 .5);
   box-shadow: 0px 0px 10px 3px #05284B;
 }
@@ -99,8 +109,9 @@ button:hover{
 
 .navigation-container{
   /* border: 3px solid purple; */
-  background-color: #4F646F;
-  border-bottom: 3px solid #B3C0A4 ;
+  /* background-color: #4F646F; */
+  background-color: #003559;
+  box-shadow:0px 2px 10px black;
   width: 98vw;
   display: flex;
   flex-direction: row;
@@ -144,3 +155,12 @@ button:hover{
   max-height: 100%;
 }
 
+.profile-dropdown-container{
+  border-radius: 20px;
+  background-color: rgba(250, 248, 240, .5);
+  padding-right: 10px;
+}
+
+li{
+  list-style-type: none;
+}
