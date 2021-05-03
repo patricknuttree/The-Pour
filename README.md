@@ -11,13 +11,13 @@
 
 [Key Features](#Key-Features)
 
-[Visit The Pour](https://travelscape-app.herokuapp.com/)
+[Visit The Pour](https://the-pour.herokuapp.com/)
 
-[Database Schema](https://github.com/jemcodes/travelScape/wiki/Database-Schema)
+[Database Schema](https://github.com/patricknuttree/The-Pour/wiki/The-Pour-Schema)
 
-[Frontend Routes](https://github.com/jemcodes/travelScape/wiki/Front-End-Routes)
+[Frontend Routes](https://github.com/patricknuttree/The-Pour/wiki/Front-End-Routes)
 
-[API Routes](https://github.com/jemcodes/travelScape/wiki/API-Documentation)
+[Backend Routes](https://github.com/patricknuttree/The-Pour/wiki/Backend-Routes)
 
 [Details](#Details)
 
@@ -25,7 +25,7 @@
 
 [Code Snippets](#Code-Snippets)
 
-[TravelScape Future Roadmap](#TravelScape-Future-Roadmap)
+[The Pour Future Roadmap](#TravelScape-Future-Roadmap)
 
 [Technical Instructions for Project](#Technical-Instructions-for-Project)
 
