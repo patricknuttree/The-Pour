@@ -170,3 +170,7 @@ button:hover{
 li{
   list-style-type: none;
 }
+
+.about-dev{
+  padding-left: 10px;
+}

@@ -6,8 +6,8 @@ const AboutPage = () => {
   return(
     <div className="about-container">
       <div className="info-container">
-        <h2>Developer</h2>
-        <h3>Patrick Nusbaum</h3>
+        <h2 className="about-dev">Developer</h2>
+        <h3 className="about-dev">Patrick Nusbaum</h3>
         <img src="https://secure.gravatar.com/avatar/e0dfd8561a1c14f21173e109dca1d69d?secure=true&size=300" />
         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/patrick-nusbaum-mpa">
           <div className="pro-links" >LinkedIn</div>
