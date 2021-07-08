@@ -30,50 +30,57 @@ function SignupFormPage() {
   };
 
   return (
-    <div className="signup-form-container">
+    <div className="signup-container-outer">
       <form className="signup-form" onSubmit={handleSubmit}>
+        <h3> Signup </h3>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        <div className="signup-form-inputs-container">
-          <label>
-            Email
+          <div className="input-container">
+          <label>Email</label>
             <input
+              className="login-input"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               />
-          </label>
-          <label>
-            Username
+              </div>
+              <div className="input-container">
+          <label>Username</label>
             <input
+              className="login-input"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
               />
-          </label>
-          <label>
-            Password
+            </div>
+            <div className="input-container">
+          <label>Password</label>
             <input
+              className="login-input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
               />
-          </label>
-          <label>
-            Confirm Password
+          </div>
+          <div className="input-container">
+          <label>Confirm Password</label>
             <input
+              className="login-input"
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
               />
-          </label>
-        </div>
+          </div>
+          <div className="input-container">
         <button type="submit">Sign Up</button>
+        <a href="/">Cancel</a>
+        </div>
+
       </form>
     </div>
   );

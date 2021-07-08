@@ -48,7 +48,7 @@ h2{
 
 .login-container-outer{
   /* border: 3px solid red; */
-  position: relative;
+  position: absolute;
   z-index: 1;
   width: 30%;
   height: 30%;
