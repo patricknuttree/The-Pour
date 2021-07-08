@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector }from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useHistory, useParams } from "react-router-dom";
 import * as userWhiskeyActions from "../../store/userWhiskeys"
 import './EditWhiskey.css';
 
 const EditWhiskey = ({whiskey}) => {
+
+  const history = useHistory()
+
   const { id } = useParams()
   const currentWhiskey = useSelector(state => state.userWhiskey[id]);
   const user = useSelector(state => state.session.user)
@@ -40,6 +43,7 @@ const EditWhiskey = ({whiskey}) => {
     if(e.type === "click"){
 
     }
+    history.push(`/profile/${user.id}`)
     return dispatch(userWhiskeyActions.editWhiskey(payload));
 
     //ATTEMPT AT DELETE BUTTON BOOLEAN SYSTEM
@@ -62,36 +66,44 @@ const EditWhiskey = ({whiskey}) => {
 
   return(
     <section className="edit-section">
-      <h2>Edit your review of {currentWhiskey.name}</h2>
-          <form className="edit-form" onSubmit={handleSubmit}>
-            <label className="edit-name-label">Whiskey Name
+          <form className="create-form" onSubmit={handleSubmit}>
+            <h2>Edit your review of {currentWhiskey.name}</h2>
+            <div className="create-field-container">
+            <label className="edit-name-label">Whiskey Name</label>
               <input
+                className="input-n"
                 type="text"
                 placeholder={`${name}`}
                 required
                 value={name}
                 onChange={updateName}
                 />
-            </label>
-            <label className="edit-name-label">Whiskey Distiller
+            </div>
+            <div className="create-field-container">
+            <label className="edit-name-label">Whiskey Distiller</label>
               <input
+                className="input-n"
                 type="text"
                 placeholder={`${distiller}`}
                 required
                 value={distiller}
                 onChange={updateDistiller}
                 />
-            </label>
-            <label className="edit-name-label">Photo of {currentWhiskey.name}
+            </div>
+            <div className="create-field-container">
+            <label className="edit-name-label">Photo of {currentWhiskey.name}</label>
               <input
+              className="input-n"
               type="text"
               placeholder={`${drinkPhoto}`}
               value={drinkPhoto}
               onChange={updateDrinkPhoto}
               />
-            </label>
-            <label className="edit-name-label">Whiskey Rating
+              </div>
+              <div className="create-rating-container">
+            <label className="edit-name-label">Whiskey Rating</label>
               <input
+              className="input-rating"
               type="number"
               max="5"
               min="0"
@@ -100,16 +112,18 @@ const EditWhiskey = ({whiskey}) => {
               value={rating}
               onChange={updateRating}
               />
-            </label>
-            <label className="edit-name-label">Whiskey Review
+          </div>
+          <div className="create-review-container">
+            <label className="edit-name-label">Whiskey Review</label>
               <input
+              className="input-review"
               type="text"
               placeholder={`${review}`}
               required
               value={review}
               onChange={updateReview}
               />
-            </label>
+              </div>
             <button type="submit">Update Whiskey</button>
             <NavLink to={`/profile/${user.id}`}>
               <button id="delete-button" type="click" onClick={handleDelete}>Delete</button>
