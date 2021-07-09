@@ -13,7 +13,7 @@ const UserWhiskey = () => {
     return data
   },
   )
-  console.log( 'USERWHISK', userWhisk)
+  // console.log( 'USERWHISK', userWhisk)
 
   const userWhiskKeys = Object.keys(userWhisk)
   // console.log(userWhiskKeys)

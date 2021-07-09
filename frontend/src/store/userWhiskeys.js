@@ -56,8 +56,8 @@ export const pourWhiskey = (whiskey) => async (dispatch) => {
   });
   const data = await response.json();
   // console.log(data)
-  // dispatch(setWhiskey(data.whiskey)); 
-  return response;
+  return dispatch(setWhiskey(data.whiskey)); 
+  // return response;
 }
 
 //UPDATE A WHISKEY ROUTE
@@ -108,7 +108,7 @@ export default function userWhiskeyReducer(state = initialState, action){
       // console.log(action.payload)
       newState = { ...state }
       newState[action.payload.id] = action.payload;
-     return newState
+      return newState
     case DELETE_WHISKEY: {
       newState = { ...state};
       delete newState[action.id]
