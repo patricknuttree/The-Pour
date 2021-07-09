@@ -34,7 +34,7 @@ router.post(
       rating,
       review
     })
-    console.log(whiskey)
+    // console.log(whiskey)
     await whiskey.save()
   })
 )

@@ -13,7 +13,7 @@ const EditWhiskey = ({whiskey}) => {
   const user = useSelector(state => state.session.user)
   const dispatch = useDispatch();
   // const currentWhiskey = dispatch()
-  console.log('CURRENT WHISKEY', currentWhiskey)
+  // console.log('CURRENT WHISKEY', currentWhiskey)
   // const whiskeyId = currentWhiskey
 
   const [name, setName] = useState(currentWhiskey?.name)
@@ -58,7 +58,7 @@ const EditWhiskey = ({whiskey}) => {
   const handleDelete = (e) => {
     // e.preventDefault()
     // const deleteData = {id}
-    console.log('DELETE DATA',id)
+    // console.log('DELETE DATA',id)
     if(e.type === "click"){
     }
     return dispatch(userWhiskeyActions.removeWhiskey(id))

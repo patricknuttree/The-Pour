@@ -7,7 +7,7 @@ import './CreateWhiskey.css';
 function CreateWhiskeyPage(){
 
   const sessionUser = useSelector(state => state.session.user);
-  console.log(sessionUser)
+  // console.log(sessionUser)
 
   const dispatch = useDispatch();
   const [name, setName] = useState("");
