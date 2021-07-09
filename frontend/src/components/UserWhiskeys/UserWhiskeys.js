@@ -42,9 +42,9 @@ const sessionUser = useSelector((state) => {
           <h2 id="userwhisk-name">{user.username}'s Whiskeys</h2>
           {userWhiskKeys.map((whiskey) => {
             return (
-              <div className="userWhiskeys-container">
+              <div key={userWhisk[whiskey].id} className="userWhiskeys-container">
                 <div className="uw-photo-container">
-                  <img alt="" className="uw-photo" src={userWhisk[whiskey].drinkPhoto} />
+                  <img alt="" className="uw-photo" src={userWhisk[whiskey]?.drinkPhoto} />
                 </div>
                   <div className="review-info-container">
                   <div className="other-info-container">
