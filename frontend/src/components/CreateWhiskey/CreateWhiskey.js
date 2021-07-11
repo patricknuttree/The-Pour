@@ -31,8 +31,8 @@ function CreateWhiskeyPage(){
       review,
       rating
     }
-    history.push(`/profile/${userId}`)
-    return dispatch(userWhiskeyActions.pourWhiskey(payload))
+      dispatch(userWhiskeyActions.pourWhiskey(payload))
+    return history.push(`/profile/${userId}`)
 };
   return (
     <section className="create-section">
